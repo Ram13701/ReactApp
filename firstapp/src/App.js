@@ -2,21 +2,19 @@ import React from 'react'
 import {useState} from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 export default function App(){
-  const[data, setData]=useState(0)
-  const add=()=>{
-    setData(data+1)
-  }
-  const del=()=>{
-    setData(data-1)
-  }
+  const[data,setData]=useState({fname:"Ravi", lname:"kumar"})
+    function demo(){
+      setData({...data, fname:"Ramesh"})
+   }
+
   return(
     <>
-    <h1>App Component</h1>
-    <h3>{data}</h3>
-    <button onClick={add} className='btn btn-success'>Add+</button>
-    <br></br>
-    <br></br>
-    <button onClick={del} className='btn btn-danger'>minus-</button>
+   
+    <h1>Hello</h1>
+    My first name is {data.fname} and last name is {data.lname}
+    <br/>
+    <button onClick={demo}>update </button>
+    
     </>
   )
 }
