@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState} from 'react'
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 export default function App(){
   const[data, setData]=useState(0)
   const add=()=>{
@@ -12,8 +13,10 @@ export default function App(){
     <>
     <h1>App Component</h1>
     <h3>{data}</h3>
-    <button onClick={add}>increment</button>
-    <button onClick={del}>decrement</button>
+    <button onClick={add} className='btn btn-success'>Add+</button>
+    <br></br>
+    <br></br>
+    <button onClick={del} className='btn btn-danger'>minus-</button>
     </>
   )
 }
