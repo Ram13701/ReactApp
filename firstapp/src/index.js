@@ -5,6 +5,7 @@ import One from './One'
 import Two from './Two'
 import Three from './Three'
 import './style.css'
+import App from './App';
 // import App from './App';
 // import reportWebVitals from './reportWebVitals';
 
@@ -14,6 +15,7 @@ root.render(
    <One/>
    <Two/>
    <Three/>
+   <App/>
   </>
 )
 
