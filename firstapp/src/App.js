@@ -4,26 +4,19 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
     function App(){
 
-      const [state, setstate]=useState(0)
-      const [data, setData]=useState(100)
+      const [state, setstate]=useState([])
       useEffect(()=>{
-        console.log("Mounted")
-      },[state])
-      const add=()=>{
-        setstate(state+1)
-      }
-      const del=()=>{
-        setData(data-1)
-      }
+        fetch('https://randomuser.me/api/?results=50')
+        .then((res)=>res.json())
+        .then((json)=>setstate(json.results))
+      })
+      
 
   return(
     <>
    
     <h1>Hello</h1>
-    <h3>{state}</h3>
-    <h3>{data}</h3>
-    <button onClick={add}>increment</button>
-    <button onClick={del}>decrement</button>
+     {state.map((list,index)=><li key={index}>{list.name.first}</li>)}
 
     </>
   )
