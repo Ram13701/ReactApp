@@ -5,15 +5,15 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
     function App(){
 
       const [state, setstate]=useState(0)
-      const [data, setdata]=useState(100)
+      const [data, setData]=useState(100)
       useEffect(()=>{
         console.log("Mounted")
-      })
+      },[state])
       const add=()=>{
         setstate(state+1)
       }
       const del=()=>{
-        setstate(state-1)
+        setData(data-1)
       }
 
   return(
